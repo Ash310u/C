@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "*.md": "html",
+        "string.h": "c"
+    }
+}
