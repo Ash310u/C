@@ -1,8 +1,8 @@
 #include <stdio.h>
 
 int main() {
-    int n, i;
-    float sum = 0;
+    int i, n;
+    double sum = 0;
     printf("Enter a number: ");
     scanf("%d", &n);
     
