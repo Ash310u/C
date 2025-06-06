@@ -1,17 +1,19 @@
 #include <stdio.h>
 
 int main() {
-    int arr[] = {12, 976, 122, 1, 3432, 4, 542, 6, 47, 85, 92};
-    for(int i=0;i< sizeof(arr)/sizeof(arr[0]);i++){
-        for(int j=i;j< sizeof(arr)/sizeof(arr[0]);j++){
-            int max = arr[j];
-            if(max > arr[j+1]){
+    int arr[] = {12, 976, 122, 1};
+    int n = 4;
+    for(int i=0; i<n; i++) {
+        for(int j=0; j<n-i-1; j++) {
+            if(arr[j] > arr[j+1]) {
+                int temp = arr[j];
                 arr[j] = arr[j+1];
-                arr[j+1] = max;
+                arr[j+1] = temp;
             }
         }
     }
-    for(int j=0;j< sizeof(arr)/sizeof(arr[0]);j++){
+
+    for(int j=0;j< n;j++){
         printf("%d,", arr[j]);
     }
     return 0;
