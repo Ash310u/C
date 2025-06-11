@@ -19,7 +19,7 @@
 int fibonacci(int n);
 int main() {
     int n, i;
-    printf("Enter the Numbers of elements you want to put: ");
+    printf("Enter a Numbers: ");
     scanf("%d", &n);
     if(n < 1) {
         printf("Invalid Input.\n");
@@ -27,10 +27,10 @@ int main() {
     }
     
     printf("Fibonacci Series: ");
-    for(i = 0; i < n; i++) {
+    for(int i = 1; i <=n; i++) {
         int result = fibonacci(i);
-        printf("%d", result);
-        if(i < n-1) printf(", ");
+        printf("%d ", result);
+        if(i < n) printf(",");
     }
     printf("\n");
     return 0;
