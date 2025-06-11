@@ -1,19 +1,28 @@
 #include <stdio.h>
 
-int main() {
-    int arr[]={12,976,122,1,3432,4,542,6,47,85,92};
-    for(int i=0;i< sizeof(arr)/sizeof(arr[0]);i++){
-        int min= arr[i];
-        for(int j=i;j< sizeof(arr)/sizeof(arr[0]);j++){
-            if(arr[j]<min){
-                min=arr[j];
-                arr[j] = arr[i];
-                arr[i] = min;
+void selectionSort(int arr[], int n) {
+    int min_idx;
+    for(int i=0; i<n; i++) {
+        min_idx = i;
+        for(int j=i; j<n; j++) {
+            if(arr[j] < arr[min_idx]) {
+                min_idx = j;
             }
         }
+        int temp = arr[i];
+        arr[i] = arr[min_idx];
+        arr[min_idx] = temp;
     }
-    for(int j=0;j< sizeof(arr)/sizeof(arr[0]);j++){
-        printf("%d,", arr[j]);
+}
+
+int main() {
+    int arr[] = {3,2,1,4};
+    int n = 4;
+    
+    selectionSort(arr, n);
+    
+    for(int i=0; i<n; i++) {
+        printf("%d", arr[i]);
     }
     return 0;
 }
