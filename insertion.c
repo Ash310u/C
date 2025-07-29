@@ -27,17 +27,21 @@ void insertElement(int mat[N][N], int insert, int pos) {
                 int total = N*N;
                 int flat[N*N];
                 int idx = 0;
-                for(int x = 0; x < N; x++)
-                    for(int y = 0; y < N; y++)
+                for(int x = 0; x < N; x++) {
+                    for(int y = 0; y < N; y++) {
                         flat[idx++] = mat[x][y];
+                    }
+                }
                 for(int k = total-1; k > pos-1; k--) {
                     flat[k] = flat[k-1];
                 }
                 flat[pos-1] = insert;
                 idx = 0;
-                for(int x = 0; x < N; x++)
-                    for(int y = 0; y < N; y++)
+                for(int x = 0; x < N; x++) {
+                    for(int y = 0; y < N; y++) {
                         mat[x][y] = flat[idx++];
+                    }
+                }
                 i = N;
                 break;
             }
